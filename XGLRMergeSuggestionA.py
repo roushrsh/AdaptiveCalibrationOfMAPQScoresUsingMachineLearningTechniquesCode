@@ -1,20 +1,15 @@
 XGBoostScore = open("finalScores60MaxXG.txt", "r")
-LogisticScore = open("finalScores60Max.txt", "r")
-mergedResult = open("MERGED60MaxXGBoostLogisticRAWR.txt", "w")
+Beauty = open("finalScores60MaxForFinalBeauty.txt", "w")
+mergedResult = open("MERGED60MaxXGBoostLogistic.txt", "r")
 
 from itertools import izip
 
-for x, y in izip(XGBoostScore, LogisticScore):
+for x, y in izip(XGBoostScore, mergedResult):
         x = x.strip()
         y = y.strip()
-        if (int(x) > 30):
-                mergedResult.write(x)
-                mergedResult.write("\n")
-        elif (int(x) < 20):
-                mergedResult.write(x)
-                mergedResult.write("\n")
+        if (int(y) < 21):
+                Beauty.write(x)
+                Beauty.write("\n")
         else:
-                mergedResult.write(y)
-                mergedResult.write("\n")
-
-
+                Beauty.write(y)
+                Beauty.write("\n")
