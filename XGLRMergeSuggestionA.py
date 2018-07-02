@@ -1,6 +1,6 @@
 XGBoostScore = open("finalScores60MaxXG.txt", "r")
 LogisticScore = open("finalScores60Max.txt", "r")
-mergedResult = open("MERGED60MaxXGBoostLogisticRAWR2.txt", "w")
+mergedResult = open("AResults.txt", "w")
 
 from itertools import izip
 
